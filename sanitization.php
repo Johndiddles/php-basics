@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="index.php" method="post">
+    <form action="sanitization.php" method="post">
         username: <input type="text" name="username" placeholder="diddles" />
         <br />
         age: <input type="text" name="age" placeholder="24"/> 
