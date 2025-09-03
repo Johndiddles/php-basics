@@ -9,7 +9,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="sessions.php" method="post">
+    <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post">
         username: <input type="text" name="username" placeholder="diddles" />
         <br />
         <input type="submit" value="submit" name="submit" />
@@ -20,7 +20,7 @@
 </html>
 
 <?php
-    if(isset($_POST["submit"])) {
+    if($_SERVER["REQUEST_METHOD"] == "POST") {
         $username = filter_input(INPUT_POST, "username", FILTER_SANITIZE_SPECIAL_CHARS);
         $_SESSION["username"] = $username;
     }
